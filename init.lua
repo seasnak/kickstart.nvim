@@ -1,5 +1,5 @@
 -- [[ Sasank's Personal Config ]]
--- Modified Version of Kickstart that is moved around to be easier to manage
+-- Modified Version of Kickstart that is split up and moved around to be easier to manage
 
 -- [[ Neovim Globals ]]
 require 'globals'
