@@ -11,7 +11,16 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  -- A neovim greeter (alpha)
+  -- {
+  --   'goolord/alpha-nvim',
+  --   config = function()
+  --     require('alpha').setup(require('alpha.themes.dashboard').config)
+  --   end,
+  -- },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -24,24 +33,17 @@ require('lazy').setup({
   -- include a plugin definition from file lua/path/name.lua
 
   require 'kickstart/plugins/gitsigns',
-
   require 'kickstart/plugins/which-key',
-
   require 'kickstart/plugins/telescope',
-
   require 'kickstart/plugins/lspconfig',
-
   require 'kickstart/plugins/conform',
-
   require 'kickstart/plugins/blink-cmp',
-
   require 'kickstart/plugins/tokyonight',
-
   require 'kickstart/plugins/todo-comments',
-
   require 'kickstart/plugins/mini',
-
   require 'kickstart/plugins/treesitter',
+  require 'kickstart/plugins/alpha',
+  require 'kickstart/plugins/barbar',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -73,19 +75,19 @@ require('lazy').setup({
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      -- cmd = '⌘',
+      -- config = '🛠',
+      -- event = '📅',
+      -- ft = '📂',
+      -- init = '⚙',
+      -- keys = '🗝',
+      -- plugin = '🔌',
+      -- runtime = '💻',
+      -- require = '🌙',
+      -- source = '📄',
+      -- start = '🚀',
+      -- task = '📌',
+      -- lazy = '💤 ',
     },
   },
 })
