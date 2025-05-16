@@ -18,12 +18,21 @@ vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true })
 vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<cr>i', { silent = true })
 
+-- Shortcut to close
+vim.keymap.set('n', '<C-w>', ':BufferClose<cr>', { silent = true, noremap = true })
+vim.keymap.set('i', '<C-w>', '<Esc>:BufferClose<cr>', { silent = true, noremap = true })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Toggle terminal
+vim.keymap.set('n', '<C-j>', ':ToggleTerm<cr>', { silent = true })
+vim.keymap.set('i', '<C-j>', '<Esc>:ToggleTerm<cr>', { silent = true })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n>:ToggleTerm<cr>', { silent = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

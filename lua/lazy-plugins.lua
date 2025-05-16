@@ -14,14 +14,6 @@ require('lazy').setup({
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  -- A neovim greeter (alpha)
-  -- {
-  --   'goolord/alpha-nvim',
-  --   config = function()
-  --     require('alpha').setup(require('alpha.themes.dashboard').config)
-  --   end,
-  -- },
-
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -44,6 +36,9 @@ require('lazy').setup({
   require 'kickstart/plugins/treesitter',
   require 'kickstart/plugins/alpha',
   require 'kickstart/plugins/barbar',
+  -- require 'kickstart/plugins/toggleterm',
+
+  { 'akinsho/toggleterm.nvim', version = '*', config = true },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
