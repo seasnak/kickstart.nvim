@@ -12,15 +12,13 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- end, { noremap = true, silent = true })
 
 -- Accept LSP Suggestions
-vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true })
+-- vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true, noremap = true, desc = "Accept Suggestion" })
 
 -- Shortcut save to ctrl-s
-vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<cr>i', { silent = true })
+vim.keymap.set({ 'i', 'n' }, '<C-s>', '<cmd>write<cr>', { silent = true, noremap = true, desc = 'Save File' })
 
 -- Shortcut to close
-vim.keymap.set('n', '<C-w>', ':BufferClose<cr>', { silent = true, noremap = true })
-vim.keymap.set('i', '<C-w>', '<Esc>:BufferClose<cr>', { silent = true, noremap = true })
+vim.keymap.set({ 'n', 'i' }, '<C-w>', '<cmd>BufferClose<cr>', { silent = true, noremap = true, desc = 'Close Buffer' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -28,14 +26,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
--- Toggle terminal
-vim.keymap.set('n', '<C-j>', ':ToggleTerm<cr>', { silent = true })
-vim.keymap.set('i', '<C-j>', '<Esc>:ToggleTerm<cr>', { silent = true })
-vim.keymap.set('t', '<C-j>', '<C-\\><C-n>:ToggleTerm<cr>', { silent = true })
-
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('n', '<leader>t', vim.diagnostic.setloclist, { desc = '[T]erminal Commands' })
 
 -- Keybinds to make split navigation easier.
 vim.keymap.set('n', '<A-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
