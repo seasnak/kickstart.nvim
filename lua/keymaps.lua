@@ -29,10 +29,14 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>t', vim.diagnostic.setloclist, { desc = '[T]erminal Commands' })
 
 -- Keybinds to make split navigation easier.
-vim.keymap.set('n', '<A-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<A-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<A-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<A-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Toggle Comments
+-- vim.keymap.set({ 'i', 'n' }, '<C-/>', '<cmd>CommentToggle<cr>', { noremap = true, desc = 'Toggle Comment' })
+-- vim.keymap.set('v', '<C-/>', '<cmd>\'<,\'>CommentToggle', { noremap = true, desc = 'Toggle Comment Block' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

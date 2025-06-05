@@ -24,8 +24,8 @@ return {
         local wk = require 'which-key'
         wk.add { 't', group = '[T]erminal' }
         -- Control Hotkey
-        vim.keymap.set({ 'i', 'n' }, '<C-j>', '<cmd>ToggleTerm<cr>',
-            { silent = true, noremap = true, desc = 'Toggle: Terminal' })
+        -- vim.keymap.set({ 'i', 'n' }, '<C-j>', '<cmd>ToggleTerm<cr>',
+        --     { silent = true, noremap = true, desc = 'Toggle: Terminal' })
         -- Leader Keymaps
         vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>',
             { silent = true, noremap = true, desc = 'Toggle: [T]erminal' })
@@ -33,9 +33,10 @@ return {
             { silent = true, noremap = true, desc = 'Toggle: [H]orizontal Terminal' })
         vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>',
             { silent = true, noremap = true, desc = 'Toggle: [F]loating Terminal' })
-        -- vim.keymap.set('t', '<C-j>', '<C-\\><C-n><cmd>ToggleTerm<cr>', { silent = true, noremap = true, desc = 'Toggle Terminal' })
+        vim.keymap.set('t', '<C-j>', '<C-\\><C-n><cmd>ToggleTerm<cr>',
+            { silent = true, noremap = true, desc = 'Toggle Terminal' })
 
         -- Exit terminal mode easier shortcut
-        vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit Terminal Mode' })
+        vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit Terminal Mode' })
     end,
 }
