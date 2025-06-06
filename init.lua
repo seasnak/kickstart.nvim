@@ -4,9 +4,6 @@
 -- [[ Neovim Globals ]]
 require 'globals'
 
--- [[ Options ]]
-require 'options'
-
 -- [[ Custom Keymaps ]]
 require 'keymaps'
 
@@ -15,3 +12,6 @@ require 'lazy-bootstrap'
 
 -- [[ Configure + Install Plugins ]]
 require 'lazy-plugins'
+
+-- [[ Options ]]
+require 'options'

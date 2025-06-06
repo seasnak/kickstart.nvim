@@ -7,7 +7,7 @@
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -20,7 +20,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+    vim.opt.clipboard = 'unnamedplus'
 end)
 
 -- Enable break indent
@@ -50,7 +50,11 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = {
+    -- tab = '» ',
+    -- trail = '·',
+    -- nbsp = '␣'
+}
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -65,3 +69,41 @@ vim.opt.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.opt.confirm = true
+
+-- Tabsize
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.softtabstop = 4
+
+-- Indent Guide
+vim.opt.list = true
+-- vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append "space:·"
+vim.opt.listchars:append "tab:» "
+
+require("ibl").setup({
+    -- Customize indent lines
+    indent = {
+        char = "│", -- character used for indent line
+        tab_char = "│", -- character used for tab indent lines
+    },
+    scope = {
+        enabled = true,
+        char = "▎", -- character for the scope line
+        highlight = "IblScope", -- Highlight group for the scope line
+    },
+    exclude = {
+        filetypes = {
+            "help",
+            "terminal",
+            "lazy",
+            "mason",
+            "NVimTree",
+            "Trouble",
+        }
+    }
+})
+
+-- Optional: Define custom highlight group for the scope
+vim.cmd [[highlight IblScope guifg=#666666]]

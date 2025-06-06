@@ -27,6 +27,10 @@ vim.keymap.set({ 'n', 'v' }, '<leader>bn', '<cmd>tabnew<cr>', { silent = true, n
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- File Keymaps
+vim.keymap.set('n', '<leader>ef', '<cmd>Telescope find_files<cr>',
+    { desc = '[F]ind Files', silent = true, noremap = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>t', vim.diagnostic.setloclist, { desc = '[T]erminal Commands' })

@@ -47,6 +47,13 @@ require('lazy').setup({
     -- require 'kickstart.plugins.autopairs',
     require 'kickstart.plugins.neo-tree',
 
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl",
+        ---@type ibl.config,
+        opts = {},
+    },
     -- { '' },
 
     -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
