@@ -4,8 +4,6 @@
 -- Personal Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Control Keybinds
-
 -- Toggle comment on line
 -- vim.keymap.set({ 'n', 'v' }, '<C-/>', function()
 --   require('Comment.api').toggle.linewise.current()
@@ -14,11 +12,16 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Accept LSP Suggestions
 -- vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true, noremap = true, desc = "Accept Suggestion" })
 
--- Shortcut save to ctrl-s
-vim.keymap.set({ 'i', 'n' }, '<C-s>', '<cmd>write<cr>', { silent = true, noremap = true, desc = 'Save File' })
+-- Save buffer
+vim.keymap.set({ 'i', 'n' }, '<C-s>', '<cmd>write<cr>', { silent = true, noremap = true, desc = '[S]ave Buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>bs', '<cmd>write<cr>', { silent = true, noremap = true, desc = '[S]ave Buffer' })
 
--- Shortcut to close
-vim.keymap.set({ 'n', 'i' }, '<C-w>', '<cmd>BufferClose<cr>', { silent = true, noremap = true, desc = 'Close Buffer' })
+-- Close buffer
+vim.keymap.set({ 'n', 'i' }, '<C-w>', '<cmd>BufferClose<cr>', { silent = true, noremap = true, desc = '[C]lose Buffer' })
+vim.keymap.set({ 'n', 'v' }, '<leader>bc', '<cmd>close<cr>', { silent = true, noremap = true, desc = '[C]lose Buffer' })
+
+-- New buffer
+vim.keymap.set({ 'n', 'v' }, '<leader>bn', '<cmd>tabnew<cr>', { silent = true, noremap = true, desc = '[N]ew Buffer' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -33,10 +36,6 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- Buffer
-vim.keymap.set('n', '<leader>bc', ':new', { desc = 'Create a new file', noremap = true, silent = true })
-
 
 -- Toggle Comments
 -- vim.keymap.set({ 'i', 'n' }, '<C-/>', '<cmd>CommentToggle<cr>', { noremap = true, desc = 'Toggle Comment' })

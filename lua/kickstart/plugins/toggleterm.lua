@@ -30,9 +30,9 @@ return {
         vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>',
             { silent = true, noremap = true, desc = 'Toggle: [T]erminal' })
         vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>',
-            { silent = true, noremap = true, desc = 'Toggle: [H]orizontal Terminal' })
+            { silent = true, noremap = true, desc = '[H]orizontal Terminal' })
         vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>',
-            { silent = true, noremap = true, desc = 'Toggle: [F]loating Terminal' })
+            { silent = true, noremap = true, desc = '[F]loating Terminal' })
         vim.keymap.set('t', '<C-j>', '<C-\\><C-n><cmd>ToggleTerm<cr>',
             { silent = true, noremap = true, desc = 'Toggle Terminal' })
 
