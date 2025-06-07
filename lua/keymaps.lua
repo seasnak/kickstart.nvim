@@ -41,6 +41,10 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Diagnostics
+-- vim.keymap.set('n', '<leader>d', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Toggle [D]iagnostic float" })
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 -- Toggle Comments
 -- vim.keymap.set({ 'i', 'n' }, '<C-/>', '<cmd>CommentToggle<cr>', { noremap = true, desc = 'Toggle Comment' })
 -- vim.keymap.set('v', '<C-/>', '<cmd>\'<,\'>CommentToggle', { noremap = true, desc = 'Toggle Comment Block' })
