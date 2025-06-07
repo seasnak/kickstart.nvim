@@ -78,6 +78,21 @@ return {
                     group = '[B]uffer',
                     mode = { 'n', 'v' }
                 },
+                {
+                    '<leader>t',
+                    group = '[T]erminal',
+                    mode = { 'n', 'v' }
+                },
+                {
+                    '<leader>e',
+                    group = '[E]xplorer',
+                    mode = { 'n', 'v' }
+                },
+                {
+                    '<leader>p',
+                    group = '[P]roject',
+                    mode = { 'n', 'v' }
+                }
             },
         },
     },

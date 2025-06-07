@@ -9,8 +9,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 --   require('Comment.api').toggle.linewise.current()
 -- end, { noremap = true, silent = true })
 
--- Accept LSP Suggestions
-vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true, noremap = true, desc = "Accept Suggestion" })
+vim.keymap.set({ 'n', 'v' }, '<Space><Space>', '<cmd>Telescope files<cr>', { silent = true })
 
 -- Save buffer
 vim.keymap.set({ 'i', 'n' }, '<C-s>', '<cmd>write<cr>', { silent = true, noremap = true, desc = '[S]ave Buffer' })
