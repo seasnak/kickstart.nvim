@@ -10,7 +10,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- end, { noremap = true, silent = true })
 
 -- Accept LSP Suggestions
--- vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true, noremap = true, desc = "Accept Suggestion" })
+vim.keymap.set('i', '<C-Enter>', '<C-y>', { silent = true, noremap = true, desc = "Accept Suggestion" })
 
 -- Save buffer
 vim.keymap.set({ 'i', 'n' }, '<C-s>', '<cmd>write<cr>', { silent = true, noremap = true, desc = '[S]ave Buffer' })
@@ -44,7 +44,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Diagnostics
 -- vim.keymap.set('n', '<leader>d', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Toggle [D]iagnostic float" })
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
 -- Toggle Comments
 -- vim.keymap.set({ 'i', 'n' }, '<C-/>', '<cmd>CommentToggle<cr>', { noremap = true, desc = 'Toggle Comment' })
 -- vim.keymap.set('v', '<C-/>', '<cmd>\'<,\'>CommentToggle', { noremap = true, desc = 'Toggle Comment Block' })

@@ -26,6 +26,30 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Manage Indents
+vim.opt.smartindent = true
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("CindentGroup", { clear = true }),
+    pattern = {
+        "c",
+        "cpp",
+        "java",
+        "javascript",
+        "typescript",
+        "rust", -- benefits from cindent-like behavior
+        "go",
+        "cs",
+        "zig",
+    },
+    callback = function()
+        vim.opt_local.cindent = true
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.tabstop = 4
+        vim.opt_local.expandtab = true
+        vim.opt_local.autoident = true
+    end,
+})
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -80,30 +104,30 @@ vim.opt.softtabstop = 4
 vim.opt.list = true
 -- vim.opt.listchars:append "eol:↴"
 -- vim.opt.listchars:append "space:·"
-vim.opt.listchars:append "tab:» "
+vim.opt.listchars:append 'tab:» '
 
-require("ibl").setup({
+require('ibl').setup {
     -- Customize indent lines
     indent = {
-        char = "│", -- character used for indent line
-        tab_char = "│", -- character used for tab indent lines
+        char = '│', -- character used for indent line
+        tab_char = '│', -- character used for tab indent lines
     },
     scope = {
         enabled = true,
-        char = "▎", -- character for the scope line
-        highlight = "IblScope", -- Highlight group for the scope line
+        char = '▎', -- character for the scope line
+        highlight = 'IblScope', -- Highlight group for the scope line
     },
     exclude = {
         filetypes = {
-            "help",
-            "terminal",
-            "lazy",
-            "mason",
-            "NVimTree",
-            "Trouble",
-        }
-    }
-})
+            'help',
+            'terminal',
+            'lazy',
+            'mason',
+            'NVimTree',
+            'Trouble',
+        },
+    },
+}
 
 -- Optional: Define custom highlight group for the scope
 vim.cmd [[highlight IblScope guifg=#666666]]
