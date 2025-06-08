@@ -35,10 +35,15 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>t', vim.diagnostic.setloclist, { desc = '[T]erminal Commands' })
 
 -- Keybinds to make split navigation easier.
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window', noremap = true, silent = true })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window', noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window', noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window', noremap = true, silent = true })
+
+vim.keymap.set('i', '<C-h>', '<Left>', { desc = 'Left Key', noremap = true, silent = true })
+vim.keymap.set('i', '<C-l>', '<Right>', { desc = 'Right Key', noremap = true, silent = true })
+vim.keymap.set('i', '<C-j>', '<Down>', { desc = 'Down Key', noremap = true, silent = true })
+vim.keymap.set('i', '<C-k>', '<Up>', { desc = 'Up Key', noremap = true, silent = true })
 
 -- Diagnostics
 -- vim.keymap.set('n', '<leader>d', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Toggle [D]iagnostic float" })
