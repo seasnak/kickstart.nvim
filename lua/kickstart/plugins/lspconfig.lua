@@ -262,5 +262,10 @@ return {
             }
         end,
     },
+
+    config = function()
+        vim.keymap.set('n', '<leader>cd', vim.lsp.buf.hover,
+            { buffer = ev.buf, silent = true, desc = "LSP: Show [D]ocumentation/Hover" })
+    end,
 }
 -- vim: ts=2 sts=2 sw=2 et
