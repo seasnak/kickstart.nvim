@@ -20,7 +20,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-    vim.opt.clipboard = 'unnamedplus'
+  vim.opt.clipboard = 'unnamedplus'
 end)
 
 -- Enable break indent
@@ -28,26 +28,26 @@ vim.opt.breakindent = true
 
 -- Manage Indents
 vim.opt.smartindent = true
-vim.api.nvim_create_autocmd("FileType", {
-    group = vim.api.nvim_create_augroup("CindentGroup", { clear = true }),
-    pattern = {
-        "c",
-        "cpp",
-        "java",
-        "javascript",
-        "typescript",
-        "rust", -- benefits from cindent-like behavior
-        "go",
-        "cs",
-        "zig",
-    },
-    callback = function()
-        vim.opt_local.cindent = true
-        vim.opt_local.shiftwidth = 4
-        vim.opt_local.tabstop = 4
-        vim.opt_local.expandtab = true
-        vim.opt_local.autoindent = true
-    end,
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('CindentGroup', { clear = true }),
+  pattern = {
+    'c',
+    'cpp',
+    'java',
+    'javascript',
+    'typescript',
+    'rust', -- benefits from cindent-like behavior
+    'go',
+    'cs',
+    'zig',
+  },
+  callback = function()
+    vim.opt_local.cindent = true
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.expandtab = true
+    vim.opt_local.autoindent = true
+  end,
 })
 
 -- Save undo history
@@ -75,9 +75,9 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = {
-    -- tab = '» ',
-    -- trail = '·',
-    -- nbsp = '␣'
+  -- tab = '» ',
+  -- trail = '·',
+  -- nbsp = '␣'
 }
 
 -- Preview substitutions live, as you type!
@@ -107,26 +107,26 @@ vim.opt.list = true
 vim.opt.listchars:append 'tab:» '
 
 require('ibl').setup {
-    -- Customize indent lines
-    indent = {
-        char = '│', -- character used for indent line
-        tab_char = '│', -- character used for tab indent lines
+  -- Customize indent lines
+  indent = {
+    char = '│', -- character used for indent line
+    tab_char = '│', -- character used for tab indent lines
+  },
+  scope = {
+    enabled = true,
+    char = '▎', -- character for the scope line
+    highlight = 'IblScope', -- Highlight group for the scope line
+  },
+  exclude = {
+    filetypes = {
+      'help',
+      'terminal',
+      'lazy',
+      'mason',
+      'NVimTree',
+      'Trouble',
     },
-    scope = {
-        enabled = true,
-        char = '▎', -- character for the scope line
-        highlight = 'IblScope', -- Highlight group for the scope line
-    },
-    exclude = {
-        filetypes = {
-            'help',
-            'terminal',
-            'lazy',
-            'mason',
-            'NVimTree',
-            'Trouble',
-        },
-    },
+  },
 }
 
 -- Optional: Define custom highlight group for the scope
